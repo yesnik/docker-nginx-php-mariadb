@@ -8,3 +8,10 @@ services:
             - 8080:80
         volumes:
             - ./app:/app
+        depends_on:
+            - php
+    php:
+        build:
+            context: docker/dev/php
+        volumes:
+            - ./app:/app
